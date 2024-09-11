@@ -1,16 +1,16 @@
 let cardContainer = document.querySelector(".cards-container")
-
 let cardData = getData()
-
 cardGenerator(cardData)
-
 //Generazione dati della card (immagine e nome)
 
 function getData(){
     let data = 
     [
         {imgSrc : "https://www.madiventura.it/pages/wp-content/uploads/2019/01/fragola.png", name:"fragola"},
-        {imgSrc : "https://www.laboutiquedelbiologico.it/8289-large_default/banane-biologiche-500-gr.jpg", name:"banana"},
+        {imgSrc : "https://www.madiventura.it/pages/wp-content/uploads/2019/01/fragola.png", name:"fragola"},
+        {imgSrc : "https://png.pngtree.com/png-clipart/20220716/ourmid/pngtree-banana-yellow-fruit-banana-skewers-png-image_5944324.png", name:"banana"},
+        {imgSrc : "https://png.pngtree.com/png-clipart/20220716/ourmid/pngtree-banana-yellow-fruit-banana-skewers-png-image_5944324.png", name:"banana"},
+        {imgSrc : "https://www.fruttasecca.it/wp-content/uploads/2019/06/pera_williams_02.png", name:"pera"},
         {imgSrc : "https://www.fruttasecca.it/wp-content/uploads/2019/06/pera_williams_02.png", name:"pera"}
 
     ]
@@ -27,7 +27,6 @@ function randomCard(element){
 
 function cardGenerator(element){
     element = randomCard(element)  //richiamo la funzione per randomizzare
-
     element.forEach(item => {      
         //genero HTML
         let card = document.createElement("div");
@@ -44,15 +43,58 @@ function cardGenerator(element){
         card.appendChild(front);
         card.appendChild(back);
         back.appendChild(cardImg)
+
         //applico le info alla carta
         cardImg.src = item.imgSrc
-
+        card.setAttribute('name' , item.name)
+        
+        //event listener per animazione sulla carta
         card.addEventListener('click', function(){
-            card.classList.toggle("flipped")
+            card.classList.add("flipped")
+            matchCard(card)
+
         })
+            
+        
     });
-
     
+}
 
+function matchCard(x) {
+    
+        // Aggiungi la classe "isflipped" alla carta cliccata
+        x.classList.add("isFlipped");
 
+        // Seleziona tutte le carte attualmente "isflipped"
+        let flippedCards = document.querySelectorAll(".isFlipped");
+
+        // Ritarda l'operazione per dare tempo al DOM di aggiornarsi
+        setTimeout(function() {
+
+            // Verifica se ci sono esattamente due carte "isflipped"
+            if (flippedCards.length === 2) {
+                // Controlla se le due carte hanno lo stesso valore per l'attributo "name"
+                if (flippedCards[0].getAttribute("name") === flippedCards[1].getAttribute("name")) {
+                    // Se le carte corrispondono, impedisci ulteriori clic su di esse
+
+                    
+                    setTimeout(function() {
+                        flippedCards.forEach(card => {
+                            card.style.backgroundColor = "lightgreen";  // Colore per carte corrette
+                            card.style.pointerEvents = "none"
+                            card.classList.remove("isFlipped")
+                        });
+                    }, 1000); // Aggiungi il colore verde dopo 1 secondo
+
+                } else {
+                    // Se le carte non corrispondono, rimuovi la classe "isflipped" e "flipped" per girarle di nuovo
+                    setTimeout(function() {
+                        flippedCards.forEach(card => {
+                            card.classList.remove("isFlipped")
+                            card.classList.remove("flipped")
+                        });
+                    }, 1000); // Ritarda la rimozione di 1 secondo
+                }
+            }
+        }, 0); // Ritarda di 0 millisecondi per garantire che il DOM sia aggiornato
 }
