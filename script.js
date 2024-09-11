@@ -6,22 +6,22 @@ cardGenerator(cardData)
 function getData(){
     let data = 
     [
-        {imgSrc : "./imgs/img1.jpeg", name:"img1"},
-        {imgSrc : "./imgs/img1.jpeg", name:"img1"},
-        {imgSrc : "./imgs/img2.jpeg", name:"img2"},
-        {imgSrc : "./imgs/img2.jpeg", name:"img2"},
-        {imgSrc : "./imgs/img3.jpeg", name:"img3"},
-        {imgSrc : "./imgs/img3.jpeg", name:"img3"},
-        {imgSrc : "./imgs/img4.jpeg", name:"img4"},
-        {imgSrc : "./imgs/img4.jpeg", name:"img4"},
-        {imgSrc : "./imgs/img5.jpeg", name:"img5"},
-        {imgSrc : "./imgs/img5.jpeg", name:"img5"},
-        {imgSrc : "./imgs/img6.jpeg", name:"img6"},
-        {imgSrc : "./imgs/img6.jpeg", name:"img6"},
-        {imgSrc : "./imgs/img7.jpeg", name:"img7"},
-        {imgSrc : "./imgs/img7.jpeg", name:"img7"},
-        {imgSrc : "./imgs/img8.jpeg", name:"img8"},
-        {imgSrc : "./imgs/img8.jpeg", name:"img8"}    
+        {imgSrc : "./immagini/img1.jpeg", name:"img1"},
+        {imgSrc : "./immagini/img1.jpeg", name:"img1"},
+        {imgSrc : "./immagini/img2.jpeg", name:"img2"},
+        {imgSrc : "./immagini/img2.jpeg", name:"img2"},
+        {imgSrc : "./immagini/img3.jpeg", name:"img3"},
+        {imgSrc : "./immagini/img3.jpeg", name:"img3"},
+        {imgSrc : "./immagini/img4.jpeg", name:"img4"},
+        {imgSrc : "./immagini/img4.jpeg", name:"img4"},
+        {imgSrc : "./immagini/img5.jpeg", name:"img5"},
+        {imgSrc : "./immagini/img5.jpeg", name:"img5"},
+        {imgSrc : "./immagini/img6.jpeg", name:"img6"},
+        {imgSrc : "./immagini/img6.jpeg", name:"img6"},
+        {imgSrc : "./immagini/img7.jpeg", name:"img7"},
+        {imgSrc : "./immagini/img7.jpeg", name:"img7"},
+        {imgSrc : "./immagini/img8.jpeg", name:"img8"},
+        {imgSrc : "./immagini/img8.jpeg", name:"img8"}    
     ]
     return data
 }
