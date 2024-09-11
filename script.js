@@ -6,16 +6,26 @@ cardGenerator(cardData)
 function getData(){
     let data = 
     [
-        {imgSrc : "https://www.madiventura.it/pages/wp-content/uploads/2019/01/fragola.png", name:"fragola"},
-        {imgSrc : "https://www.madiventura.it/pages/wp-content/uploads/2019/01/fragola.png", name:"fragola"},
-        {imgSrc : "https://png.pngtree.com/png-clipart/20220716/ourmid/pngtree-banana-yellow-fruit-banana-skewers-png-image_5944324.png", name:"banana"},
-        {imgSrc : "https://png.pngtree.com/png-clipart/20220716/ourmid/pngtree-banana-yellow-fruit-banana-skewers-png-image_5944324.png", name:"banana"},
-        {imgSrc : "https://www.fruttasecca.it/wp-content/uploads/2019/06/pera_williams_02.png", name:"pera"},
-        {imgSrc : "https://www.fruttasecca.it/wp-content/uploads/2019/06/pera_williams_02.png", name:"pera"}
-
+        {imgSrc : "./imgs/img1.jpeg", name:"img1"},
+        {imgSrc : "./imgs/img1.jpeg", name:"img1"},
+        {imgSrc : "./imgs/img2.jpeg", name:"img2"},
+        {imgSrc : "./imgs/img2.jpeg", name:"img2"},
+        {imgSrc : "./imgs/img3.jpeg", name:"img3"},
+        {imgSrc : "./imgs/img3.jpeg", name:"img3"},
+        {imgSrc : "./imgs/img4.jpeg", name:"img4"},
+        {imgSrc : "./imgs/img4.jpeg", name:"img4"},
+        {imgSrc : "./imgs/img5.jpeg", name:"img5"},
+        {imgSrc : "./imgs/img5.jpeg", name:"img5"},
+        {imgSrc : "./imgs/img6.jpeg", name:"img6"},
+        {imgSrc : "./imgs/img6.jpeg", name:"img6"},
+        {imgSrc : "./imgs/img7.jpeg", name:"img7"},
+        {imgSrc : "./imgs/img7.jpeg", name:"img7"},
+        {imgSrc : "./imgs/img8.jpeg", name:"img8"},
+        {imgSrc : "./imgs/img8.jpeg", name:"img8"}    
     ]
     return data
 }
+
 
 //funzione per randomizzare le carte
 function randomCard(element){
