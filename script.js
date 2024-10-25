@@ -1,43 +1,44 @@
 let cardContainer = document.querySelector(".cards-container")
 let cardData = getData()
+
 cardGenerator(cardData)
 //Generazione dati della card (immagine e nome)
 
 function getData(){
     let data = 
     [
-        {imgSrc : "./immagini/img1.jpeg", name:"img1"},
-        {imgSrc : "./immagini/img1.jpeg", name:"img1"},
-        {imgSrc : "./immagini/img2.jpeg", name:"img2"},
-        {imgSrc : "./immagini/img2.jpeg", name:"img2"},
-        {imgSrc : "./immagini/img3.jpeg", name:"img3"},
-        {imgSrc : "./immagini/img3.jpeg", name:"img3"},
-        {imgSrc : "./immagini/img4.jpeg", name:"img4"},
-        {imgSrc : "./immagini/img4.jpeg", name:"img4"},
-        {imgSrc : "./immagini/img5.jpeg", name:"img5"},
-        {imgSrc : "./immagini/img5.jpeg", name:"img5"},
-        {imgSrc : "./immagini/img6.jpeg", name:"img6"},
-        {imgSrc : "./immagini/img6.jpeg", name:"img6"},
-        {imgSrc : "./immagini/img7.jpeg", name:"img7"},
-        {imgSrc : "./immagini/img7.jpeg", name:"img7"},
-        {imgSrc : "./immagini/img8.jpeg", name:"img8"},
-        {imgSrc : "./immagini/img8.jpeg", name:"img8"}    
-    ]
+        {imgSrc : "https://nientepopcorn.b-cdn.net/film-img/pulp-fiction-680-locandina.jpg", name:"img1"},
+        {imgSrc : "https://nientepopcorn.b-cdn.net/film-img/pulp-fiction-680-locandina.jpg", name:"img1"},
+        {imgSrc : "https://nientepopcorn.b-cdn.net/film-img/inception-27205-locandina.jpg", name:"img2"},
+        {imgSrc : "https://nientepopcorn.b-cdn.net/film-img/inception-27205-locandina.jpg", name:"img2"},
+        {imgSrc : "https://nientepopcorn.b-cdn.net/film-img/fight-club-550-locandina.jpg", name:"img3"},
+            { imgSrc: "https://nientepopcorn.b-cdn.net/film-img/fight-club-550-locandina.jpg", name: "img3" },
+            { imgSrc: "https://nientepopcorn.b-cdn.net/film-img/avatar-19995-locandina.jpg", name: "img4" },
+            { imgSrc: "https://nientepopcorn.b-cdn.net/film-img/avatar-19995-locandina.jpg", name: "img4" },
+            { imgSrc: "https://nientepopcorn.b-cdn.net/film-img/kill-bill-vol-1-24-locandina.jpg", name: "img5" },
+            { imgSrc: "https://nientepopcorn.b-cdn.net/film-img/kill-bill-vol-1-24-locandina.jpg", name: "img5" },
+            { imgSrc: "https://i.ebayimg.com/images/g/leYAAOSwQjdihzTD/s-l1200.jpg", name: "img6" },
+            { imgSrc: "https://i.ebayimg.com/images/g/leYAAOSwQjdihzTD/s-l1200.jpg", name: "img6" },
+            { imgSrc: "https://www.warnerbros.it/wp-content/uploads/2022/01/The-Batman_Poster-Italia.jpg", name: "img7" },
+            { imgSrc: "https://www.warnerbros.it/wp-content/uploads/2022/01/The-Batman_Poster-Italia.jpg", name: "img7" },
+            { imgSrc: "https://nientepopcorn.b-cdn.net/film-img/up-14160-locandina.jpg", name: "img8" },
+            { imgSrc: "https://nientepopcorn.b-cdn.net/film-img/up-14160-locandina.jpg", name: "img8" }
+        ]
     return data
 }
 
 
 //funzione per randomizzare le carte
-function randomCard(element){
+function randomCard(element) {
     element.sort(() => Math.random() - 0.5)
-    return element   
+    return element
 }
 
 //funzione per generare in html le carte
 
-function cardGenerator(element){
+function cardGenerator(element) {
     element = randomCard(element)  //richiamo la funzione per randomizzare
-    element.forEach(item => {      
+    element.forEach(item => {
         //genero HTML
         let card = document.createElement("div");
         let front = document.createElement("img");
@@ -47,7 +48,7 @@ function cardGenerator(element){
         card.classList = 'cards';
         front.classList = 'front';
         back.classList = 'back';
-        
+
         //Inserisco le card nel container
         cardContainer.appendChild(card);
         card.appendChild(front);
@@ -56,18 +57,21 @@ function cardGenerator(element){
 
         //applico le info alla carta
         cardImg.src = item.imgSrc
-        card.setAttribute('name' , item.name)
-        
+        card.setAttribute('name', item.name)
+
         //event listener per animazione sulla carta
-        card.addEventListener('click', function(){
+        card.addEventListener('click', function () {
+
             card.classList.add("flipped")
             matchCard(card)
 
+
+
         })
-            
-        
+
+
     });
-    
+
 }
 
 function matchCard(x) {
@@ -77,7 +81,7 @@ function matchCard(x) {
 
         // Seleziona tutte le carte attualmente "isflipped"
         let flippedCards = document.querySelectorAll(".isFlipped");
-
+    
         // Ritarda l'operazione per dare tempo al DOM di aggiornarsi
         setTimeout(function() {
 

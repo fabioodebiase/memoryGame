@@ -13,21 +13,20 @@ body{
 }
 .main-container{
     display:flex;
-    justify-content: center;
-    flex-direction: column;
 }
 
 .cards-container{
-    display:flex;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
     gap:30px;
     perspective: 2000px;
-
+    padding:20px;
 }
 
 
 .cards {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     perspective: 800px;
     cursor: pointer;
     transition: transform 1s;
