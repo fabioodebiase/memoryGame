@@ -9,9 +9,9 @@
 
 <span>
   Il progetto si divide in 3 file: HTML,CSS e JavaScript;
-HTML: Il file principale index.html ha un container per l'interfaccia principale e uno per le carte, generate automaticamente dallo script;
-CSS: Definisce lo stile della pagina e delle carte. Ognuna di esse ha un lato frontale e posteriore, il primo è quello che vediamo prima di girare le carte, e il secondo contiene l'immagine da accoppiare;
-JavaScript: è il cuore del progetto, nel file sono racchiuse tutte le logiche per il gioco, implementate tramite funzioni:
+HTML: Il file principale index.html ha un container per l'interfaccia principale e uno per le carte, generate automaticamente dallo script <br>
+CSS: Definisce lo stile della pagina e delle carte. Ognuna di esse ha un lato frontale e posteriore, il primo è quello che vediamo prima di girare le carte, e il secondo contiene l'immagine da accoppiare <br>
+JavaScript: è il cuore del progetto, nel file sono racchiuse tutte le logiche per il gioco, implementate tramite funzioni <br>
       <ul>
         <li>getData(): viene chiamata per assegnare i dati alla carta, ovvero il link dell'immagine e il nome</li>
         <li>randomCard(): utilizzata per randomizzare la posizione delle carte nella pagina</li>
